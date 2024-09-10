@@ -1,4 +1,4 @@
-rootProject.name = 'food-ordering-system'
+rootProject.name = 'practice-microservices'
 include 'order-service'
 include 'order-service:order-domain'
 findProject(':order-service:order-domain')?.name = 'order-domain'
