@@ -1,6 +1,7 @@
 package com.food.ordering.system.order.service.domain.entity;
 
 import com.food.ordering.system.domain.entity.AggregateRoot;
+import com.food.ordering.system.domain.valueobject.Money;
 import com.food.ordering.system.domain.valueobject.RestaurantId;
 import lombok.Getter;
 
@@ -41,7 +42,7 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
         }
 
         public Restaurant build() {
-            return new Restaurant(this);:
+            return new Restaurant(this);
         }
     }
 }
