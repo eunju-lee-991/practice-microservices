@@ -122,7 +122,7 @@ public class Order extends AggregateRoot<OrderId> {
         this.customerId = builder.customerId;
         this.restaurantId = builder.restaurantId;
         this.deliveryAddress = builder.deliveryAddress;
-        this.price = builder.money;
+        this.price = builder.price;
         this.items = builder.items;
         this.trackingId = builder.trackingId;
         this.orderStatus = builder.orderStatus;
@@ -135,7 +135,7 @@ public class Order extends AggregateRoot<OrderId> {
         private CustomerId customerId;
         private RestaurantId restaurantId;
         private StreetAddress deliveryAddress;
-        private Money money;
+        private Money price;
         private List<OrderItem> items;
         private TrackingId trackingId;
         private OrderStatus orderStatus;
@@ -162,8 +162,8 @@ public class Order extends AggregateRoot<OrderId> {
             return this;
         }
 
-        public Builder money(Money money) {
-            this.money = money;
+        public Builder price(Money price) {
+            this.price = price;
             return this;
         }
 
