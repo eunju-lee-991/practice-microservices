@@ -36,7 +36,7 @@ public class OrderCreateCommandHandler {
         orderCreatedPaymentRequestMessagePublisher.publish(orderCreatedEvent);
 
         // 아니 이 시점에 orderTrackingId랑 orderStatus가 있나??
-        return orderDataMapper.orderToCreateOrderResponse(orderCreatedEvent.getOrder());
+        return orderDataMapper.orderToCreateOrderResponse(orderCreatedEvent.getOrder(), "Order Created Successfully");
     }
 
 }

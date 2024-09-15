@@ -11,8 +11,10 @@ repositories {
 }
 
 dependencies {
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.3.1'
     implementation project(':order-service:order-domain:order-domain-core')
     implementation project(':common:common-domain')
     compileOnly 'org.projectlombok:lombok'
