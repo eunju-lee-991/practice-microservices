@@ -13,7 +13,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
 
-@Slf4j
+//@Slf4j
 public class OrderDomainServiceImpl implements OrderDomainService {
 
     private static final String UTC = "UTC";
