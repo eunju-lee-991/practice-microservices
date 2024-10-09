@@ -1,11 +1,13 @@
 package com.food.ordering.system.order.service.domain.valueobject;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
 import java.util.UUID;
 
 @EqualsAndHashCode
+@Data
 @RequiredArgsConstructor
 public class StreetAddress {
     private final UUID id;

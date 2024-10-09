@@ -9,6 +9,9 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://packages.confluent.io/maven/'
+    }
 }
 
 dependencies {
@@ -20,8 +23,22 @@ dependencies {
     implementation project(':order-service:order-application')
     implementation project(':order-service:order-dataaccess')
     implementation project(':order-service:order-messaging')
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 
 test {
     useJUnitPlatform()
+}
+
+springBoot {
+    buildInfo()
+}
+
+bootBuildImage {
+    imageName = "${project.group}/order.service:${project.version}"
+}
+
+tasks.named('build') {
+    finalizedBy('bootBuildImage') // build 후에 이미지 생성
 }

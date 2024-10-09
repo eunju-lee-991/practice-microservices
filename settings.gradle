@@ -29,4 +29,7 @@ include 'infrastructure:kafka:kafka-model'
 findProject(':infrastructure:kafka:kafka-model')?.name = 'kafka-model'
 include 'infrastructure:kafka:kafka-config-data'
 findProject(':infrastructure:kafka:kafka-config-data')?.name = 'kafka-config-data'
+include 'common:common-application'
+findProject(':common:common-application')?.name = 'common-application'
+include 'customer-service'
 
