@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'com.github.davidmc24.gradle.plugin.avro' version '1.5.0'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.apache.avro:avro:1.11.2'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main/java'  // Java 소스 디렉토리를 따로 설정
+        }
+    }
+}
+
+avro {
+    stringType = "String"
+    enableDecimalLogicalType = true
+    fieldVisibility = "PRIVATE"
+}
+
+test {
+    useJUnitPlatform()
+}

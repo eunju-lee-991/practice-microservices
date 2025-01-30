@@ -14,7 +14,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=customer&binaryTransfer=true&reWriteBatchedInserts=true
+    url: jdbc:postgresql://localhost:5432/postgres
     username: eunju
     password: qwer1234!
     driver-class-name: org.postgresql.Driver
@@ -22,3 +22,11 @@ spring:
     data: classpath:init-data.sql
     schema: classpath:init-schema.sql
     initialization-mode: always
+
+logging:
+  level:
+    root: INFO  # 기본 로그 레벨
+    org.springframework: TRACE  # 스프링 프레임워크 관련 디버그 로그
+#    org.hibernate: DEBUG  # Hibernate 관련 디버그 로그
+#    com.zaxxer.hikari: DEBUG  # HikariCP 연결 풀 관련 디버그 로그
+#    your.package.name: DEBUG  # 당신의 패키지 관련 디버그 로그 (예: com.example)
